@@ -2,22 +2,20 @@ from typing import List
 
 
 class Solution:
-    """
-    Question Link: https://leetcode.com/problems/3sum/
-    Intuition: It first sorts the list to efficiently apply the two-pointer approach.
-    While iterating, it skips duplicate elements by checking if the current element is equal to the previous one.
-    For each unique element nums[i], it initializes two pointers, j and k, using a two-pointer approach.
-    If the sum equals zero, it adds the triplet [nums[i], nums[j], nums[k]] to the result list and moves pointers j and k accordingly.
-    It also skips duplicate elements for j to avoid redundant solutions.
-    """
-
     def threeSum(self, nums: List[int]) -> List[List[int]]:
+        """
+        Question Link: https://leetcode.com/problems/3sum/
+        Intuition: It first sorts the list to efficiently apply the two-pointer approach.
+        While iterating, it skips duplicate elements by checking if the current element is equal to the previous one.
+        For each unique element nums[i], it initializes two pointers, j and k, using a two-pointer approach.
+        If the sum equals zero, it adds the triplet [nums[i], nums[j], nums[k]] to the result list and moves pointers j and k accordingly.
+        It also skips duplicate elements for j to avoid redundant solutions.
+        """
         nums.sort()  # Sort the list to apply two-pointer approach efficiently
         res = []
 
         # Iterate through the list
         for i in range(len(nums)):
-            
             # All nums are greater than 0 so sum can't be zero
             if nums[i] > 0:  # Optimization Step
                 break
